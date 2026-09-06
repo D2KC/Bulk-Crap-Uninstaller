@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (c) 2017 Marcin Szeniak (https://github.com/Klocman/)
     Apache License Version 2.0
 */
@@ -60,7 +60,28 @@ namespace Klocman.Forms.Tools
             {
                 child(useSystemStyle);
             }
+            ApplySolarizedTheme(_reference);
             _reference.ResumeLayout();
+        }
+
+        public static void ApplySolarizedTheme(Control control)
+        {
+            if (control == null) return;
+
+            control.BackColor = control is Form ? SolarizedPalette.Base03 : (control is Panel || control is GroupBox || control is UserControl ? SolarizedPalette.Base02 : control.BackColor);
+            control.ForeColor = SolarizedPalette.Base0;
+
+            if (control is ToolStrip toolStrip)
+            {
+                toolStrip.Renderer = new ToolStripProfessionalRenderer(new SolarizedColorTable());
+                toolStrip.BackColor = SolarizedPalette.Base02;
+                toolStrip.ForeColor = SolarizedPalette.Base0;
+            }
+
+            foreach (Control child in control.Controls)
+            {
+                ApplySolarizedTheme(child);
+            }
         }
 
         private static bool CanBeChanged(Component x)

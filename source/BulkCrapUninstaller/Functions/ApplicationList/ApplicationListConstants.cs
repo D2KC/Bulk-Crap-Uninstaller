@@ -12,7 +12,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
 {
     internal static class ApplicationListConstants
     {
-        public static ApplicationListColors Colors => Settings.Default.MiscColorblind ? ApplicationListColors.ColorBlind : ApplicationListColors.Normal;
+        public static ApplicationListColors Colors => Settings.Default.MiscColorblind ? ApplicationListColors.ColorBlind : ApplicationListColors.SolarizedDark;
 
         public static string GetApplicationCertificateText(ApplicationUninstallerEntry entry)
         {
@@ -99,7 +99,7 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
                         : Colors.UnverifiedColor;
             }
 
-            return Color.White;
+            return Klocman.Forms.Tools.SolarizedPalette.Base02;
         }
     }
 }

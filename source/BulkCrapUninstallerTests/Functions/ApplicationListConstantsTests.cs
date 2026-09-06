@@ -149,5 +149,12 @@ namespace BulkCrapUninstallerTests.Functions
 
             CollectionAssert.AreEqual(new[] { Localisable.IntegrityColumn_Invalid, Localisable.IntegrityColumn_Unregistered }, (object[])result);
         }
+
+        [TestMethod]
+        public void ApplicationListColors_SolarizedDark_IsNotNull()
+        {
+            Assert.IsNotNull(ApplicationListColors.SolarizedDark);
+            Assert.AreEqual(Klocman.Forms.Tools.SolarizedPalette.VerifiedDark, ApplicationListColors.SolarizedDark.VerifiedColor);
+        }
     }
 }

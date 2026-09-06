@@ -19,6 +19,14 @@ namespace BulkCrapUninstaller.Functions.ApplicationList
             Color.FromArgb(unchecked((int) 0xff5189d3)), Color.FromArgb(unchecked((int)0xff91bfdb)),
             Color.FromArgb(unchecked((int)0xfffee090)), Color.FromArgb(unchecked((int) 0xffc9dade)));
 
+        public static ApplicationListColors SolarizedDark = new(
+            Klocman.Forms.Tools.SolarizedPalette.VerifiedDark,
+            Klocman.Forms.Tools.SolarizedPalette.UnverifiedDark,
+            Klocman.Forms.Tools.SolarizedPalette.InvalidDark,
+            Klocman.Forms.Tools.SolarizedPalette.UnregisteredDark,
+            Klocman.Forms.Tools.SolarizedPalette.WindowsFeatureDark,
+            Klocman.Forms.Tools.SolarizedPalette.WindowsStoreAppDark);
+
         public ApplicationListColors(Color verifiedColor, Color unverifiedColor, Color invalidColor,
             Color unregisteredColor, Color windowsFeatureColor, Color windowsStoreAppColor)
         {
